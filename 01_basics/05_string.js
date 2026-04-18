@@ -5,7 +5,7 @@ const repoCount = 50
 
 // console.log('Hello my name is ${name} and my repo count is ${repoCount}');
 
-const gameName = new String('SameerSR')
+const gameName = new String('Sameer-SR')
 
 console.log(gameName[0]);
 console.log(gameName.__proto__);
@@ -21,5 +21,21 @@ console.log(newString);
 
 const anotherString = gameName.slice(-8, 4)
 console.log(anotherString);
+
+const newStringOne = "  sameer  "
+console.log(newStringOne);
+console.log(newStringOne.trim());
+
+const url = "https://sameer.com/sameer%20khan"
+
+console.log(url.replace('%20', '-'))
+
+console.log(url.includes('sam'))
+
+console.log(gameName.split('-'));
+
+
+
+
 
 
