@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    let intervalId;
+
+    // Start Button
+
+    document.querySelector('#start').addEventListener('click', function(){
+
+         // baar baar start dabane par interval na bane
+         if(!intervalId){
+            intervalId =
+    setInterval(function() {
+        sayDate("Sameer");
+    }, 1000);
+
+}
+    
+    });
+
+    // Stop Button
+
+    document.querySelector('#stop').addEventListener('click', function(){
+
+         clearInterval(intervalId);
+         intervalId = null; // baar baar stop dabane par error na aaye banaya hai start button click krte run ho stop button click krte run na ho
+    });
+</script>
+</html>
