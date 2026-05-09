@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Card</title>
+
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100svh;
+            font-family: Arial;
+        }
+
+        .card{
+            background-color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 10px black;
+        }
+
+         img{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <p> creating a profile and followers</p>
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+
+</body>
+<script>
+
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('GET', requestUrl)
+
+    xhr.onreadystatechange = function(){
+
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+
+            // card create
+
+            const card = document.createElement('div')
+            card.className = 'card'
+
+            // image create
+            const image = document.createElement('img')
+            image.src = data.avatar_url
+
+            // name create
+            const name = document.createElement('h2')
+            name.innerHTML = data.name
+
+            // followers create
+            const followers = document.createElement('p')
+            followers.innerHTML = `Followers : ${data.followers}`
+
+            // append inside card
+            card.appendChild(image)
+            card.appendChild(name)
+            card.appendChild(followers)
+
+            // append card to body
+            document.body.appendChild(card)
+
+        }
+    }
+
+    xhr.send()
+
+</script>
+</html>
