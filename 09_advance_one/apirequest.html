@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Card</title>
-
+    <title>Self api request</title>
     <style>
         body{
             background-color: #212121;
             color: white;
-            display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            display: flex;
             height: 100vh;
             font-family: Arial;
         }
-
+        
         .card{
             background-color: #333;
             padding: 20px;
@@ -25,41 +24,30 @@
             box-shadow: 0 0 10px black;
         }
 
-         img{
+        image{
             width: 120px;
             height: 120px;
             border-radius: 50%;
             margin-bottom: 15px;
         }
-
-        
     </style>
 </head>
 <body>
-
-    <p> creating a profile and followers</p>
-    <!-- 0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete. -->
-
-
+    <p> create a div</p>
 </body>
 <script>
-
-    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const requestUrl = 'https://api.github.com/users/khansameer17275-dev'
 
     const xhr = new XMLHttpRequest()
 
     xhr.open('GET', requestUrl)
 
-    xhr.onreadystatechange = function(){
+    xhr.onreadystatechange = function (){
 
         if(xhr.readyState === 4){
             const data = JSON.parse(this.responseText)
 
-            // card create
+            // card create 
 
             const card = document.createElement('div')
             card.className = 'card'
@@ -84,10 +72,10 @@
             // append card to body
             document.body.appendChild(card)
 
+
         }
     }
 
     xhr.send()
-
 </script>
 </html>
