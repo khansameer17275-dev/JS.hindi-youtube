@@ -1,6 +1,5 @@
 //FileSystemDirectoryHandle('https://something.com').then().catch().finally()
 
-const { useTransition } = require("react");
 
 const promiseOne = new Promise(function(resolve, reject){
     // Do an async task
