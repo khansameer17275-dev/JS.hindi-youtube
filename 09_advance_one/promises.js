@@ -1,5 +1,7 @@
 //FileSystemDirectoryHandle('https://something.com').then().catch().finally()
 
+const { useTransition } = require("react");
+
 const promiseOne = new Promise(function(resolve, reject){
     // Do an async task
     setTimeout(function(){
@@ -21,3 +23,15 @@ new Promise(function(resolve, reject){
 }).then(function(){
     console.log("Async 2 resolved");
 })
+
+const promiseThree = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({username: "Chai", email: "chai@example.com"})
+    }, 1000)
+})
+
+promiseThree.then(function(user){
+    console.log(user);
+})
+
+
