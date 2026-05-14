@@ -1,4 +1,5 @@
 function multipleBy5(num){
+    
     return num*5
 }
 
@@ -16,10 +17,8 @@ function createUser(username, score){
 createUser.prototype.increment = function(){
     this.score++
 }
-
 createUser.prototype.printMe = function(){
-    console.log(`score is ${this.score}`);
-    
+    console.log(`price is ${this.score}`);
 }
 
 const chai = new createUser("chai, 25")
